@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  margin: auto;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  list-style: none;
+  margin: 2rem;
+  font-size: 2rem;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vw;
+}
+
+.hero-title {
+  font-size: 6rem;
+  margin: 3vw;
+}
+
+.hero-sub-text {
+  font-size: 2rem;
+}
+
+.slider-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 18vw;
+  position: relative;
+}
+
+.slider-title {
+  font-size: 2rem;
+  transform: translateY(-35rem);
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-desc-title {
+  margin-top: 2vw;
+}
+
+.slider-description {
+  font-size: 1.5rem;
+  margin-top: 2vw;
+  width: 30%;
+}
+
+.slide-not-in-frame img {
+  width: 15rem;
+  height: auto;
+}
+
+.slider-container {
+  width: 40rem;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  /* position: relative; */
+  /* overflow: hidden; */
+  /*   top: 18%;
+    left: 30%; */
+}
+
+#image-container {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  height: auto; /* = 24.3rem = 388.5 px 35vw*/
+  width: 30rem; /*= 45rem 720px 62vw*/
+}
+
+.slide-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* transform: translateX(30%); */
+}
+
+.slide-1 {
+  position: absolute;
+}
+
+.slide-2 {
+  position: absolute;
+  transform: translateX(45rem);
+}
+.slide-3 {
+  position: absolute;
+  transform: translateX(90rem);
+}
+.slide-4 {
+  position: absolute;
+  transform: translateX(135rem);
+}
+
+.button-container {
+  bottom: -170%;
+  position: absolute;
+  display: flex;
+  width: 15%;
+  justify-content: space-between;
+}
+
+.btn-left {
+  /* position: absolute; */
+  display: flex;
+  /* bottom: 2rem;
+    left: 3rem; */
+  z-index: 100;
+  font-size: 3rem;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.btn-right {
+  /* position: absolute; */
+  display: flex;
+  /* bottom: 2rem;
+    left: 9rem; */
+  z-index: 100;
+  font-size: 3rem;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+}
