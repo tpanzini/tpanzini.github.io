@@ -27,12 +27,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vw;
+  /* height: 100vw; */
+  height: 60vw;
 }
 
 .hero-title {
   font-size: 6rem;
-  margin: 3vw;
+  margin: 3rem;
 }
 
 .hero-sub-text {
@@ -43,62 +44,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 18vw;
-  position: relative;
 }
 
-.slider-title {
-  font-size: 2rem;
-  transform: translateY(-35rem);
-}
-
-.slide {
-  display: flex;
-  flex-direction: column;
-}
-
-.slider-desc-title {
-  margin-top: 2vw;
-}
-
-.slider-description {
-  font-size: 1.5rem;
-  margin-top: 2vw;
-  width: 30%;
-}
-
-.slide-not-in-frame img {
-  width: 15rem;
-  height: auto;
+.carousel {
+  width: 20rem;
+  margin: auto;
+  /*   position: absolute; */
+  overflow: hidden;
+  /*   top: 18%;
+  left: 30%; */
 }
 
 .slider-container {
-  width: 40rem;
-  height: auto;
-  margin: 0 auto;
   display: flex;
-  /* position: relative; */
-  /* overflow: hidden; */
-  /*   top: 18%;
-    left: 30%; */
-}
-
-#image-container {
-  display: flex;
-  align-items: center;
-}
-
-.image {
-  height: auto; /* = 24.3rem = 388.5 px 35vw*/
-  width: 30rem; /*= 45rem 720px 62vw*/
-}
-
-.slide-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* transform: translateX(30%); */
+  height: 15rem;
+  width: 20rem;
 }
 
 .slide-1 {
@@ -107,22 +67,19 @@
 
 .slide-2 {
   position: absolute;
-  transform: translateX(45rem);
+  transform: translateX(40rem);
 }
 .slide-3 {
   position: absolute;
-  transform: translateX(90rem);
+  transform: translateX(80rem);
 }
 .slide-4 {
   position: absolute;
-  transform: translateX(135rem);
+  transform: translateX(120rem);
 }
 
 .button-container {
-  bottom: -170%;
-  position: absolute;
   display: flex;
-  width: 15%;
   justify-content: space-between;
 }
 
@@ -131,7 +88,7 @@
   display: flex;
   /* bottom: 2rem;
     left: 3rem; */
-  z-index: 100;
+
   font-size: 3rem;
   height: 40px;
   width: 40px;
@@ -145,7 +102,7 @@
   display: flex;
   /* bottom: 2rem;
     left: 9rem; */
-  z-index: 100;
+
   font-size: 3rem;
   height: 40px;
   width: 40px;
