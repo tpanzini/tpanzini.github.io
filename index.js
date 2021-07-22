@@ -14,7 +14,7 @@ const kyotoThumbnail = document.querySelector(".kyoto-thumbnail");
 //counter
 let counter = 0;
 const size = carouselImages[0].clientWidth;
-const sizeRem = (size / 16) * 2;
+const sizeRem = (size / 16) * 1.5;
 // const getWidthElement = window.getComputedStyle("img");
 // console.log(getWidthElement);
 // const size = getWidthElement.getPropertyValue("width");
@@ -48,3 +48,43 @@ function prevSlide() {
 //slider buttons
 btnRight.addEventListener("click", nextSlide);
 btnLeft.addEventListener("click", prevSlide);
+
+//Slide in Content
+const scrollElements = document.querySelectorAll(".js-scroll");
+
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
+};
+
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add("scrolled");
+};
+
+const hideScrollElement = (element) => {
+  element.classList.remove("scrolled");
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.25)) {
+      displayScrollElement(el);
+    } else if (elementOutofView(el)) {
+      hideScrollElement(el);
+    }
+  });
+};
+window.addEventListener("scroll", () => {
+  handleScrollAnimation();
+});
