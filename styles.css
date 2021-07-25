@@ -12,8 +12,9 @@ body {
 }
 
 .top-bar {
-  background-color: #ffffff;
-  padding: 0 5rem;
+  color: white;
+  background-color: black;
+  padding: 0rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +26,7 @@ body {
 .sticky {
   position: fixed;
   top: 0;
-  padding-top: 2px;
+  /* padding-top: 2px; */
 }
 
 .nav-list {
@@ -34,8 +35,8 @@ body {
 
 .nav-item {
   list-style: none;
-  margin: 2rem;
-  font-size: 2rem;
+  margin: 1rem 2rem;
+  font-size: 1.5rem;
 }
 
 .hero-section {
@@ -79,15 +80,29 @@ body {
   left: 30%; */
 }
 
-.slide img {
+/* .slide img {
   height: 20rem;
   width: 30rem;
+} */
+
+.image-1 {
+  width: 10rem;
+  height: auto;
+}
+
+.image-2 {
+  width: 30rem;
+  height: auto;
 }
 
 .slider-container {
   display: flex;
-  height: 20rem;
-  width: 30rem;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slide-content-box {
@@ -101,7 +116,7 @@ body {
 
 .slide-2 {
   position: absolute;
-  transform: translateX(45rem);
+  transform: translateX(30rem);
 }
 .slide-3 {
   position: absolute;
@@ -115,7 +130,7 @@ body {
 .button-container {
   display: flex;
   justify-content: space-between;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 0.5rem 0;
 }
 
 .btn {
