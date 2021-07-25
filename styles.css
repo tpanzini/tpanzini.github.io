@@ -12,15 +12,20 @@ body {
 }
 
 .top-bar {
+  background-color: #ffffff;
+  padding: 0 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 25%;
-  margin: auto;
-  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
 }
 
 .sticky {
+  position: fixed;
+  top: 0;
+  padding-top: 2px;
 }
 
 .nav-list {
@@ -39,6 +44,7 @@ body {
   align-items: center;
   /* height: 100vw; */
   height: 60vw;
+  margin-top: 4rem;
 }
 
 .hero-title {
@@ -48,6 +54,14 @@ body {
 
 .hero-sub-text {
   font-size: 2rem;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-transition {
+  transition: opacity 2s;
 }
 
 .slider-section {
@@ -137,7 +151,6 @@ body {
   0% {
     transform: translateY(0);
   }
-
   /* 50% {
     transform: translateY(-0.75rem);
   } */

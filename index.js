@@ -1,16 +1,25 @@
 const carouselSlide = document.querySelector(".slider-container");
 const carouselImages = document.querySelectorAll(".slider-container img");
 const img = document.querySelector(".slider-container img");
+const navBar = document.querySelector(".top-bar");
+
+//Sticky Nav Bar
+const sticky = navBar.offsetTop;
+
+function activateStickyNav() {
+  if (window.pageYOffset >= sticky) {
+    navBar.classList.add("sticky");
+  } else {
+    navBar.classList.remove("sticky");
+  }
+}
+
+window.onScroll = activateStickyNav();
 
 //Button
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 
-//thumbnails
-const tokyoThumbnail = document.querySelector(".tokyo-thumbnail");
-const osakaThumbnail = document.querySelector(".osaka-thumbnail");
-const naraThumbnail = document.querySelector(".nara-thumbnail");
-const kyotoThumbnail = document.querySelector(".kyoto-thumbnail");
 //counter
 let counter = 0;
 const size = carouselImages[0].clientWidth;
@@ -51,7 +60,37 @@ btnLeft.addEventListener("click", prevSlide);
 
 //Slide in Content
 const scrollElements = document.querySelectorAll(".js-scroll");
+const initialLoadElements = document.querySelector(".load");
+// Load Hero Section
+const hero = document.querySelector(".hero-section");
 
+const handleHeroSection = function (el) {
+  const elementTop = el.getBoundingClientRect().top;
+  if (!hero.classList.contains("fade-out")) {
+    const fadeInLoad = function () {
+      setTimeout(() => {
+        hero.classList.toggle("fade-out");
+      }, 2000);
+    };
+  } else {
+    hero.classList.toggle("fade-out");
+  }
+};
+
+const scrollHeroSection = function (el) {
+  const elementTop = el.getBoundingClientRect().top;
+  if (!hero.classList.contains("fade-out")) {
+    const fadeInLoad = function () {
+      setTimeout(() => {
+        hero.classList.toggle("fade-out");
+      }, 2000);
+    };
+  } else {
+    hero.classList.toggle("fade-out");
+  }
+};
+
+//Load Sections on Scroll
 const elementInView = (el, dividend = 1) => {
   const elementTop = el.getBoundingClientRect().top;
   return (
@@ -62,7 +101,6 @@ const elementInView = (el, dividend = 1) => {
 
 const elementOutofView = (el) => {
   const elementTop = el.getBoundingClientRect().top;
-
   return (
     elementTop > (window.innerHeight || document.documentElement.clientHeight)
   );
@@ -78,13 +116,29 @@ const hideScrollElement = (element) => {
 
 const handleScrollAnimation = () => {
   scrollElements.forEach((el) => {
-    if (elementInView(el, 1.25)) {
-      displayScrollElement(el);
-    } else if (elementOutofView(el)) {
-      hideScrollElement(el);
+    if (!el.classList.contains("hero-section")) {
+      if (elementInView(el, 1.25)) {
+        displayScrollElement(el);
+      } else if (elementOutofView(el)) {
+        hideScrollElement(el);
+      }
+    } else if (el.classList.contains("hero-section")) {
+      if (elementInView(hero, 1.25)) {
+        displayScrollElement(hero);
+      } else if (elementOutofView(hero)) {
+        hideScrollElement(hero);
+      }
     }
   });
 };
+
+//event listeners
 window.addEventListener("scroll", () => {
   handleScrollAnimation();
+});
+window.addEventListener("load", () => {
+  handleHeroSection(hero);
+});
+window.addEventListener("scroll", () => {
+  handleScrollAnimation(hero);
 });
